@@ -16,8 +16,5 @@ DB();
 
 app.use(complaint)
 
-app.get("/",(req, res) => {
-    console.log("Hello")
-});
 
 app.listen(process.env.PORT, ()=>console.log("APP Running on PORT", process.env.PORT));
