@@ -9,7 +9,7 @@ dotenv.config();
 
 const app = express();
 app.use(express.json());
-app.use(cors({origin:'https://complaintuserform.netlify.app'}));
+app.use(cors({origin:'*'}));
 app.use(bodyParser.json());
 
 DB();

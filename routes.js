@@ -45,4 +45,46 @@ router.get('/api/complaint/download', (req, res) => {
   }
 });
 
+// router.post("/complaint/generate",async(req,res)=>{
+//     try{
+//        const text=req.body.text;
+      
+//        if(!text || typeof(text)!== "string"){
+//         return res.status(400).json({error:"Text is required and it must be string"})
+//        }
+
+//        const formattedText=formatComplaint(text);
+
+
+//           const pdfBuffer = await new Promise((resolve) => {
+//           const doc = new PDFDocument();
+//           const chunks = [];
+
+//           doc.text(formattedText);
+//           doc.on('data', (chunk) => chunks.push(chunk));
+//           doc.on('end', () => resolve(Buffer.concat(chunks)));
+
+//           doc.end();
+//             });
+
+
+//             const filename = complaint_${Date.now()}.pdf;
+//             res.setHeader('Content-Type', 'application/pdf');
+//             res.setHeader('Content-Disposition', attachment; filename="${filename}");
+//             res.send(pdfBuffer);
+
+//             const complaint = {
+//                originalText: text,
+//                formattedText: formattedText,
+//             };
+
+//             const savingComplaint=await addComplaint(complaint);
+
+//     }catch(error){
+//         console.log(error);
+//         res.status(500).json({message:"Error generating complaint"});
+//     }
+// })
+
+
 export const complaint = router;
